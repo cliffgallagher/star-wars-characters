@@ -1,7 +1,8 @@
 import React from 'react';
+import SearchForm from './SearchForm';
 
 const App = () => {
-  return <p>hello world</p>
+  return <SearchForm />
 }
 
 export default App;
