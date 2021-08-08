@@ -3,7 +3,11 @@ import SearchForm from './SearchForm';
 
 const App = () => {
 
-  return <SearchForm/>
+  const processSearchTerm = (searchTerm) => {
+    console.log('the search term is ' + searchTerm);
+  }
+
+  return <SearchForm passSearchTerm={processSearchTerm}/>
 }
 
 export default App;

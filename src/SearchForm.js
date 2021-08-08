@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchForm = (props) => {
     const userCharacterName = (event) => {
-        console.log(event.target.value);
+        props.passSearchTerm(event.target.value);
     }
     
     return (
