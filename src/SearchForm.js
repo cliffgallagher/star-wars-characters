@@ -1,7 +1,16 @@
 import React from 'react';
 
-const SearchForm = () => {
-    return <p>hello searchform world</p>
+const SearchForm = (props) => {
+    const userCharacterName = (event) => {
+        console.log(event.target.value);
+    }
+    
+    return (
+        <form>
+            <label>Character name:<input type='text' name='characterName' onChange={userCharacterName}></input></label>
+            <button type='submit'>Search</button>
+        </form>
+    )
 }
 
 export default SearchForm;
