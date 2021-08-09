@@ -3,8 +3,14 @@ import SearchForm from './SearchForm';
 
 const App = () => {
 
-  const processSearchTerm = (searchTerm) => {
-    console.log('the search term is ' + searchTerm);
+  async function processSearchTerm(searchTerm) {
+    try {
+      const response = await fetch(`https://swapi.dev/api/people/?search=${searchTerm}`);
+      const data = await response.json();
+      console.log(data);
+    } catch(error) {
+      console.log(error);
+    }
   }
 
   return <SearchForm passSearchTerm={processSearchTerm}/>
