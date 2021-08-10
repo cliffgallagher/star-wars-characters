@@ -10,7 +10,7 @@ const App = () => {
         `https://swapi.dev/api/people/?search=${searchTerm}`
       );
       const data = await response.json();
-      console.log(data);
+      console.log(data.results[0].name);
     } catch (error) {
       console.log(error);
     }
