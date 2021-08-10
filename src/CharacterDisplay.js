@@ -1,8 +1,9 @@
 import React from 'react';
 
-const CharacterDisplay = () => {
+const CharacterDisplay = (props) => {
     return <div>
-        Hi there
+        <p>Name: {props.name}</p>
+        <p>Height: {props.height}</p>
     </div>
 }
 

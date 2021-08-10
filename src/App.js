@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import SearchForm from "./SearchForm";
 import CharacterDisplay from './CharacterDisplay';
 
 const App = () => {
+  const [characterName, setCharacterName] = useState("Luke Skywalker");
+  const [characterHeight, setCharacterHeight] = useState("172")
 
   async function processSearchTerm(searchTerm) {
     try {
@@ -10,7 +12,8 @@ const App = () => {
         `https://swapi.dev/api/people/?search=${searchTerm}`
       );
       const data = await response.json();
-      console.log(data.results[0].name);
+      setCharacterName(data.results[0].name);
+      setCharacterHeight(data.results[0].height);
     } catch (error) {
       console.log(error);
     }
@@ -19,7 +22,7 @@ const App = () => {
   return (
     <div>
       <SearchForm passSearchTerm={processSearchTerm} />
-      <CharacterDisplay />
+      <CharacterDisplay name={characterName} height={characterHeight}/>
     </div>
   );
 };
