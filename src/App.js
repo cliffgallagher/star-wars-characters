@@ -19,18 +19,8 @@ const App = () => {
     }
   }
 
-  useEffect(async () => {
-
-    try {
-      const response = await fetch(
-        `https://swapi.dev/api/people/?search=luke+skywalker`
-      );
-      const data = await response.json();
-      setCharacterName(data.results[0].name);
-      setCharacterHeight(data.results[0].height);
-    } catch (error) {
-      console.log(error);
-    }
+  useEffect(() => {
+    processSearchTerm("luke skywalker");
   }, []); 
 
   return (
